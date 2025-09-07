@@ -18,8 +18,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t pranavpk0107/microdegree:latest .
-        docker push pranavpk0107/microdegree:latest
+        docker build -t naveen323/naveen:latest .
+        docker push naveen323/naveen:latest
 
     - name: Set up Kubeconfig
       run: |
