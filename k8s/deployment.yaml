@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: go-web-app
-        image: pranavpk0107/microdegree
+        image: naveen323/naveen
         ports:
         - containerPort: 8080
