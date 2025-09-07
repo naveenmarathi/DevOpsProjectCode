@@ -18,8 +18,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t naveen323/naveen:latest .
-        docker push naveen323/naveen:latest
+        docker build -t naveenm323/naveen:latest .
+        docker push naveenm323/naveen:latest
 
     - name: Set up Kubeconfig
       run: |
