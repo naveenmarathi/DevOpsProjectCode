@@ -245,7 +245,92 @@ kubectl get nodes
       sudo usermod -aG docker $USER
 
       newgrp docker
-     
 
-     
+
+    ✅ Step-by-Step Jenkins Installation & GitHub Integration
+
+
+    🔧 Step 1: Install Jenkins (on Ubuntu/Debian)
+    
+    🖥️ 1.1. Update system packages
+    
+      sudo apt update
+      
+      sudo apt upgrade -y
+
+    🖥️ 1.2. Install Java (required for Jenkins)
+      
+      sudo apt install openjdk-17-jdk -y
+
+      Verify:
+    
+      java -version
+
+    🖥️ 1.3. Add Jenkins GPG key and repository 
+    
+      curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+      /usr/share/keyrings/jenkins-keyring.asc > /dev/null
    
+      echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+      https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+      /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+    🖥️ 1.4. Install Jenkins
+    
+      sudo apt update
+      
+      sudo apt install jenkins -y
+
+    🚀 Step 2: Start and Enable Jenkins
+        
+      sudo systemctl start jenkins
+        
+      sudo systemctl enable jenkins
+
+      **Check status:**
+
+      sudo systemctl status jenkins
+
+    🌐 ****Step 3:Access Jenkins Web Interface**
+    
+      Open browser and go to:
+
+      http:<your IP address of EC2>:8080
+
+    🔐 **Step 4: Unlock Jenkins (first-time setup)**
+
+      Run this command to get the admin password:
+
+      sudo cat /var/lib/jenkins/secrets/initialAdminPassword    
+
+    👤 **Step 6: Create Admin User**
+
+Set up:
+
+      Username
+
+      Password
+
+      Full Name
+
+      Email
+
+      Then proceed.
+
+     🔗 Step 7: Connect Jenkins to GitHub
+    
+     🔧 7.1. Install Git & GitHub Plugins
+
+      In Jenkins:
+
+      Go to: Manage Jenkins > Plugins
+
+      Search for and install:
+
+      Git plugin
+
+      GitHub plugin
+
+      GitHub Integration Plugin
+
+ 
