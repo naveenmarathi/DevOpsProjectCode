@@ -4,7 +4,7 @@
 
 This project demonstrates the end-to-end development, containerization, and deployment of a Golang-based web application on a Kubernetes cluster hosted on AWS EC2. It showcases the implementation of modern DevOps practices, including Docker-based containerization, Kubernetes orchestration, and a fully automated CI/CD pipeline using Jenkins.
 
-🚀 Key Features:
+## 🚀 Key Features:
 
 - Containerized Golang Application
   Developed a web application in Go and containerized it using Docker for consistent and portable deployments.
@@ -198,7 +198,7 @@ kubectl get nodes
 
 
 
-✅** Step-by-Step Docker Installation & GitHub Integration**
+### ✅** Step-by-Step Docker Installation & GitHub Integration**
 
 ### Step 1: Install Docker (Docker Engine + Docker CLI)
 
