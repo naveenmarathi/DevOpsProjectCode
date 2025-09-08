@@ -193,11 +193,15 @@ kubectl get nodes
 
 
 
+
 ✅ Step-by-Step Docker Installation & GitHub Integration
 
 🔧 Step 1: Install Docker (Docker Engine + Docker CLI)
+
 🖥️ For Linux (Ubuntu/Debian)
+
 Update system packages:
 
 sudo apt update
+
 sudo apt upgrade -y
