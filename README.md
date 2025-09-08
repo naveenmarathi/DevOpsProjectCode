@@ -198,7 +198,7 @@ kubectl get nodes
 
 
 
-### ✅** Step-by-Step Docker Installation & GitHub Integration**
+### 🐳 Step-by-Step Docker Installation 
 
 ### Step 1: Install Docker (Docker Engine + Docker CLI)
 
