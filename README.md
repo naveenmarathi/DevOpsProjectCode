@@ -1,4 +1,4 @@
-# 🚀 CI/CD Golang Web App Deployment with Kubernetes & CI/CD Pipeline
+# 🚀 CI/CD Golang Web App Deployment with Kubernetes & Docker 
 
 ## 📄 Project Description
 
