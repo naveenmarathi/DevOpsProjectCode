@@ -307,15 +307,15 @@ kubectl get nodes
 
 Set up:
 
-      Username
+     - Username
 
-      Password
+     - Password
 
-      Full Name
+     - Full Name
 
-      Email
+     - Email
 
-      Then proceed.
+     - Then proceed.
 
      🔗 **Step 7: Connect Jenkins to GitHub**
     
@@ -323,14 +323,14 @@ Set up:
 
       In Jenkins:
 
-      Go to: Manage Jenkins > Plugins
+      - Go to: Manage Jenkins > Plugins
+ 
+      - Search for and install:
 
-      Search for and install:
+      - Git plugin
 
-      Git plugin
+      - GitHub plugin
 
-      GitHub plugin
-
-      GitHub Integration Plugin
+      - GitHub Integration Plugin
 
  
