@@ -200,8 +200,16 @@ kubectl get nodes
 
 🖥️ For Linux (Ubuntu/Debian)
 
-Update system packages:
+1. Update system packages:
 
-sudo apt update
+    sudo apt update
 
-sudo apt upgrade -y
+    sudo apt upgrade -y
+   
+2. Install dependencies:
+
+sudo apt install \
+  ca-certificates \
+  curl \
+  gnupg \
+  lsb-release
