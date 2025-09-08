@@ -252,7 +252,7 @@ kubectl get nodes
       newgrp docker
 
 
-### ✅ Step by step Jenkins Installation & GitHub Integration
+### 🤖 Step by step Jenkins Installation & GitHub Integration
 
 
 ### 🔧 Step 1: Install Jenkins (on Ubuntu/Debian) 
