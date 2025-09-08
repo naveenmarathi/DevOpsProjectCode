@@ -197,26 +197,28 @@ kubectl get nodes
 
 
 
+
 ✅** Step-by-Step Docker Installation & GitHub Integration**
 
-🔧** Step 1: Install Docker (Docker Engine + Docker CLI)**
+### Step 1: Install Docker (Docker Engine + Docker CLI)
 
 🖥️ For Linux (Ubuntu/Debian)
 
-1. **Update system packages:**
+### 1. Update system packages:
 
-    sudo apt update
+      sudo apt update
 
-    sudo apt upgrade -y
+      sudo apt upgrade -y
    
-2. **Install dependencies:**
+### 2. Install depndencies:
 
       sudo apt install \
       ca-certificates \
       curl \
       gnupg \
       lsb-release
-3. **Add Docker’s official GPG key:**
+      
+### 3. Add Docker’s official GPG key:
 
       sudo mkdir -m 0755 -p /etc/apt/keyrings
    
@@ -224,7 +226,7 @@ kubectl get nodes
    
       sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
- 4. **Add Docker repository:**
+### 4. Add Docker repository:
 
       echo \
      "deb [arch=$(dpkg --print-architecture) \
@@ -233,35 +235,35 @@ kubectl get nodes
       $(lsb_release -cs) stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-5.  **Install Docker Engine:**
+### 5. Install Docker Engine:
 
       sudo apt update
 
       sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-6.  ** Check Docker version:**
+### 6. Check Docker version:
 
       docker --version
 
-7.    **Add current user to the docker group:**
+### 7. Add current user to the docker group:
 
       sudo usermod -aG docker $USER
 
       newgrp docker
 
 
-    ✅ Step-by-Step Jenkins Installation & GitHub Integration
+### ✅ Step by step Jenkins Installation & GitHub Integration
 
 
-    🔧 **Step 1: Install Jenkins (on Ubuntu/Debian)**
+### 🔧 Step 1: Install Jenkins (on Ubuntu/Debian) 
     
-    🖥️** 1.1. Update system packages**
+    🖥️ 1.1. Update system packages
     
       sudo apt update
       
       sudo apt upgrade -y
 
-    🖥️** 1.2. Install Java (required for Jenkins)**
+    🖥️ 1.2. Install Java (required for Jenkins)
       
       sudo apt install openjdk-17-jdk -y
 
@@ -269,7 +271,7 @@ kubectl get nodes
     
       java -version
 
-    🖥️** 1.3. Add Jenkins GPG key and repository **
+    🖥️ 1.3. Add Jenkins GPG key and repository 
     
       curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
       /usr/share/keyrings/jenkins-keyring.asc > /dev/null
@@ -278,35 +280,35 @@ kubectl get nodes
       https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
       /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-    🖥️ **1.4. Install Jenkins**
+    🖥️ 1.4. Install Jenkins
     
       sudo apt update
       
       sudo apt install jenkins -y
 
-    🚀 **Step 2: Start and Enable Jenkins**
+## 🚀 step 2: Start and Enable Jenkins  
         
       sudo systemctl start jenkins
         
       sudo systemctl enable jenkins
 
-      **Check status:**
+      Check status:
 
       sudo systemctl status jenkins
 
-    🌐 **Step 3:Access Jenkins Web Interface**
+## 🌐 step 3: Access Jenkins Web Interface
     
       Open browser and go to:
 
       http:<your IP address of EC2>:8080
 
-    🔐 **Step 4: Unlock Jenkins (first-time setup)**
+## 🔐 step 4: Unlock Jenkins (first-time setup)
 
       Run this command to get the admin password:
 
       sudo cat /var/lib/jenkins/secrets/initialAdminPassword    
 
-    👤 **Step 6: Create Admin User**
+##  👤 step 5: Create Admin User
 
 Set up:
 
@@ -320,9 +322,9 @@ Set up:
 
      - Then proceed.
 
-     🔗 **Step 7: Connect Jenkins to GitHub**
+##  🔗 step 6: Connect Jenkins to GitHub
     
-     🔧**7.1. Install Git & GitHub Plugins**
+     🔧6.1. Install Git & GitHub Plugins
 
       In Jenkins:
 
@@ -336,7 +338,7 @@ Set up:
 
       - GitHub Integration Plugin
 
-      ## ✅ Conclusion
+### ✅ Conclusion
 
       This project showcases a complete DevOps pipeline by developing, containerizing, and deploying a Golang 
       web application on a Kubernetes cluster with automated CI/CD, seamless GitHub integration, and zero-downtime deployments—ensuring scalable,
