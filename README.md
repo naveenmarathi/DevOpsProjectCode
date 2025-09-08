@@ -194,26 +194,26 @@ kubectl get nodes
 
 
 
-✅ Step-by-Step Docker Installation & GitHub Integration
+✅** Step-by-Step Docker Installation & GitHub Integration**
 
-🔧 Step 1: Install Docker (Docker Engine + Docker CLI)
+🔧** Step 1: Install Docker (Docker Engine + Docker CLI)**
 
 🖥️ For Linux (Ubuntu/Debian)
 
-1. Update system packages:
+1. **Update system packages:**
 
     sudo apt update
 
     sudo apt upgrade -y
    
-2. Install dependencies:
+2. **Install dependencies:**
 
       sudo apt install \
       ca-certificates \
       curl \
       gnupg \
       lsb-release
-3. Add Docker’s official GPG key:
+3. **Add Docker’s official GPG key:**
 
       sudo mkdir -m 0755 -p /etc/apt/keyrings
    
@@ -221,7 +221,7 @@ kubectl get nodes
    
       sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
- 4. Add Docker repository:
+ 4. **Add Docker repository:**
 
       echo \
      "deb [arch=$(dpkg --print-architecture) \
@@ -230,17 +230,17 @@ kubectl get nodes
       $(lsb_release -cs) stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-5.  Install Docker Engine:
+5.  **Install Docker Engine:**
 
       sudo apt update
 
       sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-6.   Check Docker version:
+6.  ** Check Docker version:**
 
       docker --version
 
-7.    Add current user to the docker group:
+7.    **Add current user to the docker group:**
 
       sudo usermod -aG docker $USER
 
