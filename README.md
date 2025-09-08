@@ -228,5 +228,24 @@ kubectl get nodes
       signed-by=/etc/apt/keyrings/docker.gpg] \
       https://download.docker.com/linux/ubuntu \
       $(lsb_release -cs) stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null  
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+5.  Install Docker Engine:
+
+      sudo apt update
+
+      sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+6.   Check Docker version:
+
+      docker --version
+
+7.    Add current user to the docker group:
+
+      sudo usermod -aG docker $USER
+
+      newgrp docker
+     
+
+     
    
