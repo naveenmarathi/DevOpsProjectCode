@@ -338,6 +338,6 @@ Set up:
 
       ## ✅ Conclusion
 
-      This project showcases a complete DevOps pipeline by developing, containerizing, and deploying a Golang web application on a Kubernetes cluster with 
-      
-      automated CI/CD, seamless GitHub integration, and zero-downtime deployments—ensuring scalable, reliable, and efficient software delivery.
+      This project showcases a complete DevOps pipeline by developing, containerizing, and deploying a Golang 
+      web application on a Kubernetes cluster with automated CI/CD, seamless GitHub integration, and zero-downtime deployments—ensuring scalable,
+      reliable, and efficient software delivery.
