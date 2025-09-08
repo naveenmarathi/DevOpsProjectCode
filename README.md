@@ -208,8 +208,8 @@ kubectl get nodes
    
 2. Install dependencies:
 
-sudo apt install \
-  ca-certificates \
-  curl \
-  gnupg \
-  lsb-release
+      sudo apt install \
+      ca-certificates \
+      curl \
+      gnupg \
+      lsb-release
