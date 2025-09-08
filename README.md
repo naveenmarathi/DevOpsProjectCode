@@ -250,15 +250,15 @@ kubectl get nodes
     ✅ Step-by-Step Jenkins Installation & GitHub Integration
 
 
-    🔧 Step 1: Install Jenkins (on Ubuntu/Debian)
+    🔧 **Step 1: Install Jenkins (on Ubuntu/Debian)**
     
-    🖥️ 1.1. Update system packages
+    🖥️** 1.1. Update system packages**
     
       sudo apt update
       
       sudo apt upgrade -y
 
-    🖥️ 1.2. Install Java (required for Jenkins)
+    🖥️** 1.2. Install Java (required for Jenkins)**
       
       sudo apt install openjdk-17-jdk -y
 
@@ -266,7 +266,7 @@ kubectl get nodes
     
       java -version
 
-    🖥️ 1.3. Add Jenkins GPG key and repository 
+    🖥️** 1.3. Add Jenkins GPG key and repository **
     
       curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
       /usr/share/keyrings/jenkins-keyring.asc > /dev/null
@@ -275,13 +275,13 @@ kubectl get nodes
       https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
       /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-    🖥️ 1.4. Install Jenkins
+    🖥️ **1.4. Install Jenkins**
     
       sudo apt update
       
       sudo apt install jenkins -y
 
-    🚀 Step 2: Start and Enable Jenkins
+    🚀 **Step 2: Start and Enable Jenkins**
         
       sudo systemctl start jenkins
         
@@ -291,7 +291,7 @@ kubectl get nodes
 
       sudo systemctl status jenkins
 
-    🌐 ****Step 3:Access Jenkins Web Interface**
+    🌐 **Step 3:Access Jenkins Web Interface**
     
       Open browser and go to:
 
@@ -317,9 +317,9 @@ Set up:
 
       Then proceed.
 
-     🔗 Step 7: Connect Jenkins to GitHub
+     🔗** Step 7: Connect Jenkins to GitHub**
     
-     🔧 7.1. Install Git & GitHub Plugins
+     🔧** 7.1. Install Git & GitHub Plugins**
 
       In Jenkins:
 
