@@ -317,9 +317,9 @@ Set up:
 
       Then proceed.
 
-     🔗** Step 7: Connect Jenkins to GitHub**
+     🔗 Step 7: Connect Jenkins to GitHub
     
-     🔧** 7.1. Install Git & GitHub Plugins**
+     🔧7.1. Install Git & GitHub Plugins
 
       In Jenkins:
 
