@@ -1,15 +1,44 @@
-# 🚀 CI/CD Deployment of Golang Web Application on Kubernetes (AWS)
+# 🚀 CI/CD Golang Web App Deployment with Kubernetes & CI/CD Pipeline
 
-# Kubeadm Installation Guide
+## 📄 Project Description
+
+This project demonstrates the end-to-end development, containerization, and deployment of a Golang-based web application on a Kubernetes cluster hosted on AWS EC2. It showcases the implementation of modern DevOps practices, including Docker-based containerization, Kubernetes orchestration, and a fully automated CI/CD pipeline using Jenkins.
+
+🚀 Key Features:
+
+- Containerized Golang Application
+  Developed a web application in Go and containerized it using Docker for consistent and portable deployments.
+
+- Kubernetes Cluster Deployment (Kubeadm + AWS EC2)
+  Deployed the application on a Kubernetes cluster set up using Kubeadm on AWS EC2 instances, enabling scalable and resilient infrastructure.
+
+- CI/CD Pipeline with Jenkins + Docker + Kubernetes
+  Implemented a fully automated CI/CD pipeline using Jenkins. The pipeline handles code build, Docker image creation, pushing to a registry, and deployment to    the Kubernetes cluster.
+
+- GitHub Integration via Webhooks
+  Integrated GitHub with Jenkins using webhooks to trigger automatic builds and deployments on every code commit, ensuring continuous integration.
+
+- Zero-Downtime Deployments
+  Leveraged Kubernetes rolling updates to achieve zero-downtime deployments, enhancing application reliability and user experience.
+
+## 🛠️ Tools & Technologies
+
+- **Jenkins** – CI/CD automation server (master/agent setup)
+- **Docker** – Containerization of the application
+- **Docker Hub** – Container registry for image storage
+- **Kubernetes**(Kubeadm) - Deploying our applications. 
+- **GitHub** – Source code repository
+- **EC2 (AWS)** – Hosting Kubernetes master and agent nodes
+- **GitHub Webhooks** - Automatically notify Jenkins of code changes (like pushes or pull requests), triggering the CI/CD pipeline without manual input.
+
+## 🔄 Project Workflow
+
+### Step 1: Create EC2 Instances  
+Create **2 EC2 instances** – one for master, one for agent.
+
+### Step 2: Setup Kubernetes Master Node and Slave Node by below installation guide
 
 This guide outlines the steps needed to set up a Kubernetes cluster using `kubeadm`.
-
-## Prerequisites
-
-- Ubuntu OS (Xenial or later)
-- `sudo` privileges
-- Internet access
-- t2.medium instance type or higher
 
 ---
 
@@ -18,24 +47,6 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 1. Ensure that all instances are in the same **Security Group**.
 2. Expose port **6443** in the **Security Group** to allow worker nodes to join the cluster.
 3. Expose port **22** in the **Security Group** to allows SSH access to manage the instance..
-
-
-## To do above setup, follow below provided steps
-
-### Step 1: Identify or Create a Security Group
-
-1. **Log in to the AWS Management Console**:
-    - Go to the **EC2 Dashboard**.
-
-2. **Locate Security Groups**:
-    - In the left menu under **Network & Security**, click on **Security Groups**.
-
-3. **Create a New Security Group**:
-    - Click on **Create Security Group**.
-    - Provide the following details:
-      - **Name**: (e.g., `Kubernetes-Cluster-SG`)
-      - **Description**: A brief description for the security group (mandatory)
-      - **VPC**: Select the appropriate VPC for your instances (default is acceptable)
 
 4. **Add Rules to the Security Group**:
     - **Allow SSH Traffic (Port 22)**:
@@ -50,16 +61,6 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 
 5. **Save the Rules**:
     - Click on **Create Security Group** to save the settings.
-
-### Step 2: Select the Security Group While Creating Instances
-
-- When launching EC2 instances:
-  - Under **Configure Security Group**, select the existing security group (`Kubernetes-Cluster-SG`)
-
-> Note: Security group settings can be updated later as needed.
-
----
-
 
 ## Execute on Both "Master" & "Worker" Nodes
 
@@ -335,4 +336,6 @@ Set up:
 
       - GitHub Integration Plugin
 
- 
+      ## ✅ Conclusion
+
+      This project showcases a complete DevOps pipeline by developing, containerizing, and deploying a Golang web application on a Kubernetes cluster with            automated CI/CD, seamless GitHub integration, and zero-downtime deployments—ensuring scalable, reliable, and efficient software delivery.
