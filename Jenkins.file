@@ -1,0 +1,79 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "naveenm323/microdegree"
+        IMAGE_TAG  = "latest"
+    }
+
+    stages {
+
+        stage("Checkout Code") {
+            steps {
+                git branch: "main",
+                    url: "https://github.com/<your-repo>.git"
+                echo "Code checkout complete"
+            }
+        }
+
+        stage("Build & Test") {
+            steps {
+                sh """
+                echo "Running tests..."
+                go test ./... || exit 1
+                """
+                echo "Tests passed"
+            }
+        }
+
+        stage("Build Docker Image") {
+            steps {
+                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                echo "Docker image built"
+            }
+        }
+
+        stage("Push Docker Image") {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: "dockerHub",
+                        usernameVariable: "DOCKER_USER",
+                        passwordVariable: "DOCKER_PASS"
+                    )
+                ]) {
+                    sh """
+                    echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
+                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    """
+                }
+                echo "Docker image pushed"
+            }
+        }
+
+        stage("Deploy to Kubernetes") {
+            steps {
+                withCredentials([
+                    file(credentialsId: "kubeconfig", variable: "KUBECONFIG_FILE")
+                ]) {
+                    sh """
+                    export KUBECONFIG=${KUBECONFIG_FILE}
+                    kubectl apply -f k8s/deployment.yaml
+                    kubectl apply -f k8s/service.yaml
+                    kubectl rollout status deployment/go-web-app
+                    """
+                }
+                echo "Deployment successful"
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "🎉 CI/CD Pipeline completed successfully"
+        }
+        failure {
+            echo "❌ Pipeline failed. Check logs."
+        }
+    }
+}
